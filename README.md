@@ -14,7 +14,8 @@ The other focus on the design was to use the fewest number of pieces (files) on 
 * ms.html - this is used to provide the dashboard. It queries the Google Fusion table and graphs the data. This file can actually be hosted on any system.
 
 # Setup
- 1. The first thing you'll want to do is get your Google Fusion table created. If you are not familiar with this, please refer to this ![YouTube video](http://img.youtube.com/vi/tlwoVnHvU5o/0.jpg)](http://www.youtube.com/watch?v=tlwoVnHvU5o) for reference.
+ 1. The first thing you'll want to do is get your Google Fusion table created. If you are not familiar with this, please refer to this video for reference.
+ ![YouTube video](http://img.youtube.com/vi/tlwoVnHvU5o/0.jpg)](http://www.youtube.com/watch?v=tlwoVnHvU5o)
  2. Make the table accessible for reading without having to use OAuth by Sharing it with `Anyone who has the link can view` rights.
 
 
