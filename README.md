@@ -13,6 +13,10 @@ The other focus on the design was to use the fewest number of pieces (files) on 
 * **stopModemData.sh** - this is optional. It is used for LuCI custom command to stop the collection of modem data.
 * **ms.html** - this is used to provide the dashboard. It queries the Google Fusion table and graphs the data. This file can actually be hosted on any system.
 
+# Prereqs
+1. If using ModemManager, start it in Debug mode
+2. Have Bash shell installed
+
 # Setup
 ## Fusion Table
  1. The first thing you'll want to do is get your Google Fusion table created. If you are not familiar with this, please refer to this video for reference.
@@ -37,13 +41,14 @@ The other focus on the design was to use the fewest number of pieces (files) on 
  
  ## Fusion Table API
  1. Now, we need a utlity to populate the Fusion Table we get from the modem. To do so, we'll use [this](https://github.com/fusiontables/fusion-tables-api-samples/tree/master/ftapi) utility. We only need to get the ftapi folder. Infomation on how to setup the credential and other access can be found in it's [README.html](https://github.com/fusiontables/fusion-tables-api-samples/blob/master/ftapi/README.html) file (which you'll want to view in a browser after downloading).
+ 2. You'll want to also incorporate this [PR](https://github.com/fusiontables/fusion-tables-api-samples/pull/62).
  2. Place the ftapi folder and all its content in `/root/`
  
  ## Get Modem Data
  1. Simply place the `getModemData.sh` file in `/root/ftapi/`
  2. Make it executable (if required) by issuing `chmod +x /root/ftapi/getModemData.sh`
  3. Open `getModemData.sh` and replace `<YOUR_TABLEID>` with the Table ID of your table noted down in Step 4 of the first setup section.
- 4. OPTIONAL - If you want to run this everytime your system starts, put the following line in /etc/rc.local just before `exit 0`
+ 4. OPTIONAL - If you want to run this everytime your system starts, put the following line in `/etc/rc.local` just before `exit 0`
  * `/root/ftapi/getModemData.sh &`
  
  ## Dashboard
@@ -76,3 +81,5 @@ The dashboard can be viewed at `https://<modem hostname, dns, ip>/ms.html`
 
 # To DOs
 * Display current band
+* Mobile friendly/responsive UI
+* Prune table
