@@ -14,16 +14,27 @@ The other focus on the design was to use the fewest number of pieces (files) on 
 * ms.html - this is used to provide the dashboard. It queries the Google Fusion table and graphs the data. This file can actually be hosted on any system.
 
 # Setup
+## Fusion Table
  1. The first thing you'll want to do is get your Google Fusion table created. If you are not familiar with this, please refer to this video for reference.
 
 [![YouTube video](http://img.youtube.com/vi/tlwoVnHvU5o/0.jpg)](https://www.youtube.com/watch?v=tlwoVnHvU5o)
 
  2. Create a schema with these columns: [Schema](https://i.imgur.com/upRWnrA.png)
   * All columns except DATA are of: [Number Columns](https://i.imgur.com/DSriWlX.png)
-  * DATE colume is: [Date Column](https://i.imgur.com/QjhcCE3.png)
+  * DATE column is: [Date Column](https://i.imgur.com/QjhcCE3.png)
  
-
  3. Make the table accessible for reading without having to use OAuth by Sharing it with `Anyone who has the link can view` rights.
+ 
+ 4. Note down your Table ID.
+ 
+ ## Fusion Table API
+ Now, we need a utlity to populate the Fusion Table we get from the modem. To do so, we'll use [this](https://github.com/fusiontables/fusion-tables-api-samples/tree/master/ftapi) utility. We only need to get the ftapi folder. Infomation on how to setup the credential and other access can be found in it's [README.html](https://github.com/fusiontables/fusion-tables-api-samples/blob/master/ftapi/README.html) file (which you'll want to view in a browser after downloading).
+ 
+ ## Get Modem Data
+ 1. Simply place the `getModemData.sh` file in `/root/`
+ 2. Make it executable (if required) by issuing `chmod +x getModemData.sh`
+ 3. If you want to run this everytime your system starts, put the following line in /etc/rc.local just before `exit 0`
+ * `/root/getModemData.sh &`
 
 
 
