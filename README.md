@@ -19,9 +19,17 @@ The other focus on the design was to use the fewest number of pieces (files) on 
 
 [![YouTube video](http://img.youtube.com/vi/tlwoVnHvU5o/0.jpg)](https://www.youtube.com/watch?v=tlwoVnHvU5o)
 
- 2. Create a schema with these columns: [Schema](https://i.imgur.com/upRWnrA.png)
-  * All columns except DATA are of: ![Number Columns](https://i.imgur.com/DSriWlX.png)
-  * DATE column is: ![Date Column](https://i.imgur.com/QjhcCE3.png)
+ 2. Create a schema with these columns: 
+ 
+ ![Schema](https://i.imgur.com/upRWnrA.png)
+ 
+  * All columns except DATA are of: 
+  
+  ![Number Columns](https://i.imgur.com/DSriWlX.png)
+  
+  * DATE column is: 
+  
+  ![Date Column](https://i.imgur.com/QjhcCE3.png)
  
  3. Make the table accessible for reading without having to use OAuth by Sharing it with `Anyone who has the link can view` rights.
  
