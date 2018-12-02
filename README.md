@@ -74,4 +74,5 @@ The dashboard can be viewed at `https://<modem hostname, dns, ip>/ms.html`
 # Issues
 * Google does have API limits that may come into play. I believe they are 25,000 per day and 200 every 100 seconds.
 
-
+# To DOs
+* Display current band
