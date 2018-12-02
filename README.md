@@ -28,13 +28,33 @@ The other focus on the design was to use the fewest number of pieces (files) on 
  4. Note down your Table ID.
  
  ## Fusion Table API
- Now, we need a utlity to populate the Fusion Table we get from the modem. To do so, we'll use [this](https://github.com/fusiontables/fusion-tables-api-samples/tree/master/ftapi) utility. We only need to get the ftapi folder. Infomation on how to setup the credential and other access can be found in it's [README.html](https://github.com/fusiontables/fusion-tables-api-samples/blob/master/ftapi/README.html) file (which you'll want to view in a browser after downloading).
+ 1. Now, we need a utlity to populate the Fusion Table we get from the modem. To do so, we'll use [this](https://github.com/fusiontables/fusion-tables-api-samples/tree/master/ftapi) utility. We only need to get the ftapi folder. Infomation on how to setup the credential and other access can be found in it's [README.html](https://github.com/fusiontables/fusion-tables-api-samples/blob/master/ftapi/README.html) file (which you'll want to view in a browser after downloading).
+ 2. Place the ftapi folder and all its content in `/root/`
  
  ## Get Modem Data
- 1. Simply place the `getModemData.sh` file in `/root/`
- 2. Make it executable (if required) by issuing `chmod +x getModemData.sh`
- 3. If you want to run this everytime your system starts, put the following line in /etc/rc.local just before `exit 0`
- * `/root/getModemData.sh &`
+ 1. Simply place the `getModemData.sh` file in `/root/ftapi/`
+ 2. Make it executable (if required) by issuing `chmod +x /root/ftapi/getModemData.sh`
+ 3. Open `getModemData.sh` and replace `<YOUR_TABLEID>` with the Table ID of your table noted down in Step 4 of the first setup section.
+ 4. OPTIONAL - If you want to run this everytime your system starts, put the following line in /etc/rc.local just before `exit 0`
+ * `/root/ftapi/getModemData.sh &`
+ 
+ ## Dashboard
+ 1. Place the file `ms.html` into `/www/`
+ 2. If required, give the file these permission `chmod 644 /www/ms.html`
+ 3. Open `/www/ms.html` and replace (around line 14) `<YOUR_TABLEID>` with the Table ID of your table noted down in Step 4 of the first setup section.
+ 
+ ## OPTIONAL - Using LuCI Custom Commands to Start and Stop the collection of data.
+ 1. First, you'll need to put `stopModemData.sh` into `/root/ftapi/` (Can be placed in another location if so desired)
+ 2. Make it executable (if required) by issuing `chmod +x /root/ftapi/stopModemData.sh`
+ 3. Go to LuCI Custom Commands section of the modem UI, and enter these:
+ * To [Start](https://i.imgur.com/n7Hfc8x.png)
+ * To ![Stop](https://i.imgur.com/wf45m3W.png)
+ 4. Press `RUN` on the Start script
+
+
+# Access Dashboard
+The dashboard can be viewed at `https://<modem hostname, dns, ip>/ms.html`
+
 
 
 
