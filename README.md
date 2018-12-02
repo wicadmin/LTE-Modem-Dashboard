@@ -5,7 +5,7 @@ With little customization, it can be adopted to work without ModemManger if you 
 
 The utlity is also geared towards a system running OpenWrt/LEDE with LuCI - however it is optional.
 
-The design was focus on not storing data on the device but on cloud storage and not having special utilities locally to graph the data. It utilizes Google Fusion tables to store data and Google Visulization to provide the graphs.
+The design was focus on not storing data on the device but on cloud storage and not having special utilities locally to graph the data. It utilizes Google Fusion tables to store data and Google Visualization to provide the graphs.
 
 The other focus on the design was to use the fewest number of pieces (files) on the system. Apart from the 3rd party utility used to interact with Google Fusion tables, there are only three files required:
 
