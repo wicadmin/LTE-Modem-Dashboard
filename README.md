@@ -69,6 +69,8 @@ The other focus on the design was to use the fewest number of pieces (files) on 
 # Access Dashboard
 The dashboard can be viewed at `https://<modem hostname, dns, ip>/ms.html`
 
+![Dashboard](https://i.imgur.com/4HmTwkX.png)
+
 # Issues
 *Google does have API limits that may come into play. I believe they are 25,000 per day and 200 every 100 seconds.
 
