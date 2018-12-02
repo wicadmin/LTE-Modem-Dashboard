@@ -1,0 +1,235 @@
+<html>
+  <head>
+    <title>Modem Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    const TABLEID = "<YOUR_TABLEID>";
+    google.charts.load('visualization', '1', {packages: ['linechart']});
+    google.charts.load('visualization', '1', {packages: ['corechart']});
+    google.charts.load('visualization', '1', {packages: ['gauge']});
+    google.charts.setOnLoadCallback(drawVisualization);
+    google.charts.setOnLoadCallback(drawVisualization2);
+    google.charts.setOnLoadCallback(drawVisualization3);
+    google.charts.setOnLoadCallback(drawVisualization4);
+    google.charts.setOnLoadCallback(drawVisualization5);
+    google.charts.setOnLoadCallback(drawVisualization6);
+    google.charts.setOnLoadCallback(drawVisualization7);
+    google.charts.setOnLoadCallback(drawVisualization8);
+
+    function drawVisualization() {
+      google.visualization.drawChart({
+        "containerId": "chart_sinr",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT DATE, SINR FROM "+TABLEID+" order by DATE DESC limit 20",
+        "refreshInterval": 5,
+        "chartType": "LineChart",
+        "options": {
+          title: '',
+          lineWidth: 3,
+          curveType: 'function',
+          legend: { position: 'top' },
+          width: 780,
+          height: 400,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+    function drawVisualization2() {
+      google.visualization.drawChart({
+        "containerId": "chart_rest",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT DATE, 'RSSI-M', 'RSRP-M', 'RSSI-D', 'RSRP-D', RSRQ FROM "+TABLEID+" order by DATE DESC limit 20",
+        "refreshInterval": 5,
+        "chartType": "LineChart",
+        "options": {
+          title: '',
+          vAxis: {title: '', direction:-1},
+          hAxis: {title: ''},
+          curveType: 'function',
+          lineWidth: 3,
+          intervals: { 'style':'line' },
+          legend: { position: 'top' },
+          width: 780,
+          height: 400,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+    function drawVisualization3() {
+      google.visualization.drawChart({
+        "containerId": "chart_sinr_guage",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT SINR, DATE FROM "+TABLEID+" order by DATE DESC limit 1",
+        "refreshInterval": 5,
+        "chartType": "Gauge",
+        "options": {
+          redFrom: 0, redTo: 7,
+          yellowFrom: 7, yellowTo: 12.5,
+          greenFrom: 12.5, greenTo: 100,
+          max: 30,
+          minorTicks: 5,
+          width: 300,
+          height: 150,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+    function drawVisualization4() {
+      google.visualization.drawChart({
+        "containerId": "chart_rsrq_guage",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT RSRQ, DATE FROM "+TABLEID+" order by DATE DESC limit 1",
+        "refreshInterval": 5,
+        "chartType": "Gauge",
+        "options": {
+          redFrom: -20, redTo: -11,
+          yellowFrom: -11, yellowTo: -5,
+          greenFrom: -5, greenTo: 5,
+          min: -20,
+          max: 5,
+          minorTicks: 5,
+          width: 300,
+          height: 150,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+    function drawVisualization5() {
+      google.visualization.drawChart({
+        "containerId": "chart_rssim_guage",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT 'RSSI-M', DATE FROM "+TABLEID+" order by DATE DESC limit 1",
+        "refreshInterval": 5,
+        "chartType": "Gauge",
+        "options": {
+          redFrom: -100, redTo: -85,
+          yellowFrom: -85, yellowTo: -65,
+          greenFrom: -65, greenTo: 10,
+          min: -100,
+          max: 10,
+          minorTicks: 5,
+          width: 300,
+          height: 150,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+    function drawVisualization6() {
+      google.visualization.drawChart({
+        "containerId": "chart_rsrpm_guage",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT 'RSRP-M', DATE FROM "+TABLEID+" order by DATE DESC limit 1",
+        "refreshInterval": 5,
+        "chartType": "Gauge",
+        "options": {
+          redFrom: -120, redTo: -112,
+          yellowFrom: -112, yellowTo: -103,
+          greenFrom: -103, greenTo: -50,
+          min: -120,
+          max: -50,
+          minorTicks: 5,
+          width: 300,
+          height: 150,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+
+    function drawVisualization7() {
+      google.visualization.drawChart({
+        "containerId": "chart_rssid_guage",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT 'RSSI-D', DATE FROM "+TABLEID+" order by DATE DESC limit 1",
+        "refreshInterval": 5,
+        "chartType": "Gauge",
+        "options": {
+          redFrom: -100, redTo: -85,
+          yellowFrom: -85, yellowTo: -65,
+          greenFrom: -65, greenTo: 10,
+          min: -100,
+          max: 10,
+          minorTicks: 5,
+          width: 300,
+          height: 150,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+    function drawVisualization8() {
+      google.visualization.drawChart({
+        "containerId": "chart_rsrpd_guage",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query" : "SELECT 'RSRP-D', DATE FROM "+TABLEID+" order by DATE DESC limit 1",
+        "refreshInterval": 5,
+        "chartType": "Gauge",
+        "options": {
+          redFrom: -120, redTo: -112,
+          yellowFrom: -112, yellowTo: -103,
+          greenFrom: -103, greenTo: -50,
+          min: -120,
+          max: -50,
+          minorTicks: 5,
+          width: 300,
+          height: 150,
+	  chartArea: {left: "10%"}
+         }
+      });
+    }
+
+
+    </script>
+  </head>
+
+  <body>
+      <div class="container">
+        <nav class="navbar navbar-dark bg-info">
+          <a class="navbar-brand" href="#">Modem Status</a>
+        </nav>
+        <div class="row no-gutters">
+	  <div class="col">
+            <div class="row no-gutters">
+              <div class="col" id="chart_sinr"></div>
+              <div class="col" id="chart_rest"></div>
+            </div> 
+	  </div>
+          
+	  <div class="col mt-5">
+	     <div class="row no-gutters">
+               <div class="col-3 mt-2"></div>
+	       <div class="col-sm mt-5" id="chart_sinr_guage"></div>
+	     </div>
+             <div class="row no-gutters">
+               <div class="col mt-5">
+                 <div class="row no-gutters">
+                   <div class="col mt-2" id="chart_rssim_guage"></div>
+                   <div class="col mt-2" id="chart_rsrpm_guage"></div>
+                 </div>
+                 <div class="row no-gutters">
+                   <div class="col mt-2" id="chart_rssid_guage"></div>
+                   <div class="col mt-2" id="chart_rsrpd_guage"></div>
+                 </div>
+                 <div class="row no-gutters aligh-items-center">
+                   <div class="col-3 mt-2"></div>
+                   <div class="col-sm mt-2" id="chart_rsrq_guage"></div>
+                 </div>
+               </div>
+            </div>
+         </div>
+       </div>
+  </body>
+</html>
