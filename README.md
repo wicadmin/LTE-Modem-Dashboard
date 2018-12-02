@@ -18,7 +18,11 @@ The other focus on the design was to use the fewest number of pieces (files) on 
 
 [![YouTube video](http://img.youtube.com/vi/tlwoVnHvU5o/0.jpg)](https://www.youtube.com/watch?v=tlwoVnHvU5o)
 
- 2. Make the table accessible for reading without having to use OAuth by Sharing it with `Anyone who has the link can view` rights.
+ 2. Create a schema with these columns:
+ 
+ [Imgur](https://i.imgur.com/upRWnrA.png)
+
+ 3. Make the table accessible for reading without having to use OAuth by Sharing it with `Anyone who has the link can view` rights.
 
 
 
