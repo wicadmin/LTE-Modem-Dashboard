@@ -55,11 +55,11 @@ The other focus on the design was to use the fewest number of pieces (files) on 
  1. First, you'll need to put `stopModemData.sh` into `/root/ftapi/` (Can be placed in another location if so desired)
  2. Make it executable (if required) by issuing `chmod +x /root/ftapi/stopModemData.sh`
  3. Go to LuCI Custom Commands section of the modem UI, and enter these:
- * To Stop: 
+ * To Start: 
  
  ![Start](https://i.imgur.com/n7Hfc8x.png)
  
- * To Start:
+ * To Stop:
  
  ![Stop](https://i.imgur.com/wf45m3W.png)
  
