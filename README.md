@@ -23,7 +23,7 @@ The other focus on the design was to use the fewest number of pieces (files) on 
  
  ![Schema](https://i.imgur.com/upRWnrA.png)
  
-  * All columns except DATA are of: 
+  * All columns except DATE are of: 
   
   ![Number Columns](https://i.imgur.com/DSriWlX.png)
   
@@ -55,14 +55,21 @@ The other focus on the design was to use the fewest number of pieces (files) on 
  1. First, you'll need to put `stopModemData.sh` into `/root/ftapi/` (Can be placed in another location if so desired)
  2. Make it executable (if required) by issuing `chmod +x /root/ftapi/stopModemData.sh`
  3. Go to LuCI Custom Commands section of the modem UI, and enter these:
- * To Stop: ![Start](https://i.imgur.com/n7Hfc8x.png)
- * To Start:![Stop](https://i.imgur.com/wf45m3W.png)
+ * To Stop: 
+ 
+ ![Start](https://i.imgur.com/n7Hfc8x.png)
+ 
+ * To Start:
+ 
+ ![Stop](https://i.imgur.com/wf45m3W.png)
+ 
  4. Press `RUN` on the Start script
 
 
 # Access Dashboard
 The dashboard can be viewed at `https://<modem hostname, dns, ip>/ms.html`
 
-
+# Issues
+*Google does have API limits that may come into play. I believe they are 25,000 per day and 200 every 100 seconds.
 
 
