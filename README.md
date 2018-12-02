@@ -1,4 +1,4 @@
-# LTE-Modem-Dashboard
+# LTE Modem Dashboard
 The following will describe the method used and explain how to setup and use this utility to get a dashboard to view the modem status of an LTE modem installed on a device/system that has ModemManager. 
 
 With little customization, it can be adopted to work without ModemManger if you have another way of getting access to the modem via AT commands. (This will not be explained as it is not the focus of this utility)
