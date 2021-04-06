@@ -5,7 +5,7 @@
 
 
 while :; do
-   MM=$(mmcli -m 3 --command="!GSTATUS?")
+   MM=$(mmcli -m 0 --command="!GSTATUS?")
 
    RSSI_D=$(echo "${MM}" | grep "PCC RxD" | awk '{print $4}')
    RSRP_D=$(echo "${MM}" | grep "PCC RxD" | awk '{print $7}')
