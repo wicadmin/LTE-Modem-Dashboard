@@ -3,9 +3,6 @@
 # Let's kill any running ones just in case
 kill -9 $(pgrep -f getModemData.sh)
 
-cd /root/ftapi
-
-TABLEID=<YOUR_TABLEID>
 
 while :; do
    MM=$(mmcli -m 0 --command="!GSTATUS?")
@@ -19,8 +16,26 @@ while :; do
    SINR=$(echo "${MM}" | grep "SINR" | awk '{print $3}' | sed 's/.$//')
    DATE=$(date +%x' '%r)
 
-./ftsql.sh "insert into ${TABLEID} ('BAND', 'RSSI-M', 'RSRP-M', 'RSSI-D', 'RSRP-D', 'SINR', 'RSRQ', 'DATE') \
-	values($BAND, $RSSI_M, $RSRP_M, $RSSI_D, $RSRP_D, $SINR, $RSRQ, '${DATE}')"
+	
+sendStr = \
+$(jq -n \
+--arg band "$BAND" \
+--arg rssi_m "$RSSI_M" \
+--arg rsrp_m "$RSRP_M" \
+--arg rssi_d "$RSSI_D" \
+--arg rsrp_d "$RSRP_D" \
+--arg sinr "$SINR" \
+--arg rsrq "$RSRQ" \
+'{band: $band, \
+rssi_m: $rssi_m,\
+rsrp_m: $rsrp_m, \
+rssi_d: $rssi_d, \
+rsrp_d: $rsrp_d, \
+sinr: sinr, \
+rsrq: $rsrq
+}')
+
+mosquitto_pub -t 'modem/signal' -m '$sendStr'
 
 sleep 5
 done
