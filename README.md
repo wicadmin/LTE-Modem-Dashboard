@@ -7,7 +7,7 @@ New Dashboard will have a different architecture and use the following component
 * MQTT - Get data from modem and for Telegraf to consume
 * Grafana - Dashboard for displaying the measurements
 
-![Imgur](https://i.imgur.com/JFWikBn)
+![Imgur](https://i.imgur.com/nhg3e9d.jpg)
 
 
 ** INFORMATION BELOW IS OUTDATED. Will be updated once refactoring is completed **
