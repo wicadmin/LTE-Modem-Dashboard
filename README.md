@@ -10,7 +10,9 @@ Server side:
 * Grafana - Dashboard for displaying the measurements
 
 Modem side:
-* Shell scripts from this project
+* Shell scripts from this project - Get data from modem and send to MQTT
+* jq - Json library
+* Mosquitto - Client library to publish to MQTT
 
 ![Imgur](https://i.imgur.com/nhg3e9d.jpg)
 
