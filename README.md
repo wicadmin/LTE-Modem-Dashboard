@@ -6,13 +6,12 @@ New Dashboard will have a different architecture and use the following component
 Server side:
 * InfluxDB v2 - Time Series Data store (has Dashboard capabilities also)
 * Telegraf - Get data from MQTT and store in Influxdb
-* MQTT - Get data from modem and for Telegraf to consume
 * Grafana - Dashboard for displaying the measurements
 
 Modem side:
-* Shell scripts from this project - Get data from modem and send to MQTT
+* Shell scripts from this project - Get data from modem and send to Telegraf
 * jq - Json library
-* Mosquitto - Client library to publish to MQTT
+* curl - Send Json to Telegraf
 
 ![Imgur](https://i.imgur.com/nhg3e9d.jpg)
 
