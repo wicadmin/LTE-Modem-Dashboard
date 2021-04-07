@@ -11,6 +11,7 @@ New Dashboard will have a different architecture and use the following component
 
 
 ** INFORMATION BELOW IS OUTDATED. Will be updated once refactoring is completed **
+
 ** ============================================================================ **
 
 The following will describe the method used and explain how to setup and use this utility to get a dashboard to view the modem status of an LTE modem installed on a device/system that has ModemManager. 
