@@ -26,8 +26,7 @@ while :; do
 	--argjson rsrq "$RSRQ" \
 	'{band: $band, rssi_m: $rssi_m,	rsrp_m: $rsrp_m, rssi_d: $rssi_d, rsrp_d: $rsrp_d, sinr: $sinr, rsrq: $rsrq}')
 
-echo $sendStr
-mosquitto_pub -h <hostname> -t 'modem/signal' -m "$sendStr"
+   mosquitto_pub -h <hostname> -t 'modem/signal' -m "$sendStr"
 
 sleep 5
 done
