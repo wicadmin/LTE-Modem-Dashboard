@@ -13,7 +13,7 @@ Modem side:
 * jq - Json library
 * curl - Send Json to Telegraf
 
-[img]https://i.imgur.com/vIwvV4E.png[/img]
+![Imgur2](https://i.imgur.com/ZTIckI6.png)
 
 ![Imgur](https://i.imgur.com/nhg3e9d.jpg)
 
