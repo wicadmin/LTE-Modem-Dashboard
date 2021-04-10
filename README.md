@@ -1,3 +1,10 @@
+# ** NOTICE **
+
+This branch contains the original dashboard based on Google's now defunct Fusion Tables. Please see the work in progress for the new dashboard [here](https://github.com/wicadmin/LTE-Modem-Dashboard/tree/influxdb)
+
+
+
+
 # LTE Modem Dashboard
 The following will describe the method used and explain how to setup and use this utility to get a dashboard to view the modem status of an LTE modem installed on a device/system that has ModemManager. 
 
